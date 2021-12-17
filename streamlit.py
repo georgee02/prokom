@@ -4,7 +4,7 @@ import numpy as np
 import json
 
 f = open('data/kode_negara_lengkap.json')
-data_n = json.load(f)
+xdata = json.load(f)
 
 option = st.sidebar.selectbox(
     'Silakan pilih:',
@@ -28,7 +28,7 @@ elif option == 'Jumlah Produksi Minyak':
     txt_negara = st.text_input('Masukan Nama Negara :')
 
     if txt_negara:
-        for negara in data_n:
+        for negara in xdata:
             if negara['name'] == str(txt_negara):
                 st.text("Data Negara Yang Di Tunjukan : ")
                 st.text("Kode Negara : " + negara['alpha-3'])
